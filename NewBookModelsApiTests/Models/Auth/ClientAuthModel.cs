@@ -108,7 +108,7 @@ namespace NewBookModelsApiTests.Models.Auth
     public class TokenData
     {
         [JsonProperty("token")]
-        public static string Token { get; set; }
+        public string Token { get; set; }
 
         [JsonProperty("token_refresh_expires")]
         public DateTime TokenRefreshExpires { get; set; }

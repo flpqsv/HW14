@@ -8,6 +8,7 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="HW14.sln" t="IncludeFlat" />
       <e p="NewBookModelsApiTests" t="IncludeRecursive">
+        <e p="AccountSettingsTests.cs" t="Include" />
         <e p="ApiRequests" t="Include">
           <e p="Auth" t="Include">
             <e p="AuthRequests.cs" t="Include" />
@@ -23,6 +24,8 @@
           </e>
           <e p="Client" t="Include">
             <e p="ChangeEmailResponse.cs" t="Include" />
+            <e p="ChangePasswordResponse.cs" t="Include" />
+            <e p="ChangePhoneResponse.cs" t="Include" />
           </e>
         </e>
         <e p="NewBookModelsApiTests.csproj" t="IncludeRecursive" />
@@ -33,7 +36,6 @@
             </e>
           </e>
         </e>
-        <e p="UnitTest1.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
     </e>
