@@ -183,5 +183,34 @@ namespace NewBookModelsApiTests
                 Assert.AreEqual(HttpStatusCode.OK, responseModel.Response.StatusCode);
             });
         }
+        
+        [Test]
+        public void ChangeCompanyInfo()
+        {
+            var user = new Dictionary<string, string>
+            {
+                {"email", $"mabel{DateTime.Now:ddyymmHHssmmffff}@gmail.com"},
+                {"first_name", "MaBelle"},
+                {"last_name", "Parker"},
+                {"password", "Mabel123!"},
+                {"phone_number", "3453453454"}
+            };
+
+            var createdUser = AuthRequests.SendRequestClientSignUpPost(user);
+            
+            var description = "My description."; 
+            var companyName = "Henlo World Inc";
+            var website = "http://henloworld.com";
+            
+            var responseModel = ClientRequests.SendRequestChangeClientCompanyInfoPost(description, companyName, website, createdUser.TokenData.Token);
+            
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(description, responseModel.Model.Description);
+                Assert.AreEqual(companyName, responseModel.Model.CompanyName);
+                Assert.AreEqual(website, responseModel.Model.Website);
+                Assert.AreEqual(HttpStatusCode.OK, responseModel.Response.StatusCode);
+            });
+        }
     }
 }

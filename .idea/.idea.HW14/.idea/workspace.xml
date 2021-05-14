@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68ff55e6-305e-458f-a818-a78cc608e5a3" name="Default Changelist" comment="">
+    <list default="true" id="68ff55e6-305e-458f-a818-a78cc608e5a3" name="Default Changelist" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HW14/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HW14/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HW14/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HW14/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW14.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/HW14.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewBookModelsApiTests/AccountSettingsTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NewBookModelsApiTests/AccountSettingsTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewBookModelsApiTests/ApiRequests/Client/ClientRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NewBookModelsApiTests/ApiRequests/Client/ClientRequests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewBookModelsApiTests/Models/Client/ChangePasswordResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NewBookModelsApiTests/Models/Client/ChangePasswordResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewBookModelsApiTests/Models/Client/ChangePhoneResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NewBookModelsApiTests/Models/Client/ChangePhoneResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewBookModelsApiTests/bin/Debug/net48/NewBookModelsApiTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/NewBookModelsApiTests/bin/Debug/net48/NewBookModelsApiTests.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewBookModelsApiTests/bin/Debug/net48/NewBookModelsApiTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/NewBookModelsApiTests/bin/Debug/net48/NewBookModelsApiTests.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewBookModelsApiTests/obj/Debug/net48/NewBookModelsApiTests.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/NewBookModelsApiTests/obj/Debug/net48/NewBookModelsApiTests.csproj.CoreCompileInputs.cache" afterDir="false" />
@@ -30,6 +27,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.local/share/Symbols/src/nunit/nunit/c933a883ea25263ec575a654dae69fa38000edd9/src/NUnitFramework/framework/Internal/Execution/WorkItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/Mabelle/Desktop/HW14/NewBookModelsApiTests/AccountSettingsTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/.local/share/Symbols/src/nunit/nunit/c933a883ea25263ec575a654dae69fa38000edd9/src/NUnitFramework/framework/Internal/Reflect.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F3AD61B0-698F-4A40-B5BD-2532AC72F249/9c/5bd3b621/ThreadHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/.local/share/Symbols/src/nunit/nunit/c933a883ea25263ec575a654dae69fa38000edd9/src/NUnitFramework/framework/Internal/Execution/CompositeWorkItem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -48,8 +46,9 @@
         <option value="$PROJECT_DIR$/NewBookModelsApiTests/Models/Client/ChangePasswordResponse.cs" />
         <option value="$PROJECT_DIR$/NewBookModelsApiTests/Models/Client/ChangePhoneResponse.cs" />
         <option value="$PROJECT_DIR$/NewBookModelsApiTests/Models/Client/ChangePersonalInfoResponse.cs" />
-        <option value="$PROJECT_DIR$/NewBookModelsApiTests/ApiRequests/Client/ClientRequests.cs" />
         <option value="$PROJECT_DIR$/NewBookModelsApiTests/Models/Client/ChangeIndustryAndLocationResponse.cs" />
+        <option value="$PROJECT_DIR$/NewBookModelsApiTests/Models/Client/ChangeCompanyInfoResponse.cs" />
+        <option value="$PROJECT_DIR$/NewBookModelsApiTests/ApiRequests/Client/ClientRequests.cs" />
         <option value="$PROJECT_DIR$/NewBookModelsApiTests/AccountSettingsTests.cs" />
       </list>
     </option>
@@ -76,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620812071186</updated>
       <workItem from="1620812104884" duration="4958000" />
-      <workItem from="1620878822446" duration="16545000" />
+      <workItem from="1620878822446" duration="17356000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1620931158672</created>
@@ -85,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620931158673</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=".">
+      <created>1621003017926</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621003017926</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,10 +181,10 @@
       <screen x="0" y="23" width="2560" height="1293" />
     </state>
     <state width="2151" height="312" key="GridCell.Tab.3.right/0.23.2560.1293@0.23.2560.1293" timestamp="1621000186595" />
-    <state x="818" y="414" key="Vcs.Push.Dialog.v2" timestamp="1620931163707">
+    <state x="818" y="414" key="Vcs.Push.Dialog.v2" timestamp="1621003019155">
       <screen x="0" y="23" width="2560" height="1293" />
     </state>
-    <state x="818" y="414" key="Vcs.Push.Dialog.v2/0.23.2560.1293@0.23.2560.1293" timestamp="1620931163707" />
+    <state x="818" y="414" key="Vcs.Push.Dialog.v2/0.23.2560.1293@0.23.2560.1293" timestamp="1621003019155" />
     <state width="1096" height="600" key="XDebugger.FullValuePopup" timestamp="1621000006476">
       <screen x="0" y="23" width="2560" height="1293" />
     </state>

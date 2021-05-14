@@ -127,6 +127,30 @@ namespace NewBookModelsApiTests.ApiRequests.Client
 
             return new ResponseModel<ChangeIndustryAndLocationResponse>{Model = changeIndustryAndLocationResponse, Response = response};
         }
+        
+        public static ResponseModel<ChangeCompanyInfoResponse> SendRequestChangeClientCompanyInfoPost(string description, string companyName, string website, string token)
+        {
+            var client = new RestClient("https://api.newbookmodels.com/api/v1/client/profile/");
+            var request = new RestRequest(Method.PATCH);
+            
+            var newCompanyInfoModel = new Dictionary<string, string>
+            {
+                {"company_description", description},
+                {"company_name", companyName},
+                {"company_website", website}
+            };
+            
+            request.AddHeader("content-type", "application/json");
+            request.AddHeader("authorization", token);
+            
+            request.AddJsonBody(newCompanyInfoModel);
+            request.RequestFormat = DataFormat.Json;
+
+            var response = client.Execute(request);
+            var changeCompanyInfoResponse = JsonConvert.DeserializeObject<ChangeCompanyInfoResponse>(response.Content);
+
+            return new ResponseModel<ChangeCompanyInfoResponse>{Model = changeCompanyInfoResponse, Response = response};
+        }
 
         public class ResponseModel<T>
         {

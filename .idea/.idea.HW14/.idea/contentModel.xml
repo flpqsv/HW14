@@ -23,6 +23,7 @@
             <e p="ClientAuthModel.cs" t="Include" />
           </e>
           <e p="Client" t="Include">
+            <e p="ChangeCompanyInfoResponse.cs" t="Include" />
             <e p="ChangeEmailResponse.cs" t="Include" />
             <e p="ChangeIndustryAndLocationResponse.cs" t="Include" />
             <e p="ChangePasswordResponse.cs" t="Include" />
