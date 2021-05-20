@@ -14,17 +14,17 @@
         "outputPath": "/Users/Mabelle/Desktop/HW14/NewBookModelsApiTests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/Mabelle/.config/NuGet/NuGet.Config"
+          "/Users/Mabelle/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net48"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net48": {
+            "targetAlias": "net48",
             "projectReferences": {}
           }
         },
@@ -36,6 +36,7 @@
       },
       "frameworks": {
         "net48": {
+          "targetAlias": "net48",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -58,7 +59,7 @@
               "version": "[106.11.8-alpha.0.14, )"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/Cellar/mono/6.12.0.122/lib/mono/msbuild/Current/bin/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -58,12 +58,10 @@ namespace NewBookModelsApiTests
             };
 
             var createdUser = AuthRequests.SendRequestClientSignUpPost(user);
-            var oldToken = createdUser.TokenData.Token;
 
             var newPassword = "MaBelle1234!";
 
             var changedPassword = ClientRequests.SendRequestChangeClientPasswordPost(password, newPassword, createdUser.TokenData.Token);
-            var newToken = createdUser.TokenData.Token;
 
              var statusCode = SignIn(email, newPassword);
             
@@ -210,6 +208,81 @@ namespace NewBookModelsApiTests
                 Assert.AreEqual(companyName, responseModel.Model.CompanyName);
                 Assert.AreEqual(website, responseModel.Model.Website);
                 Assert.AreEqual(HttpStatusCode.OK, responseModel.Response.StatusCode);
+            });
+        }
+        
+        [Test]
+        public void TryChangeEmailWithWrongPassword()
+        {
+            var user = new Dictionary<string, string>
+            {
+                {"email", $"mabel{DateTime.Now:ddyymmHHssmmffff}@gmail.com"},
+                {"first_name", "MaBelle"},
+                {"last_name", "Parker"},
+                {"password", "Mabel123!"},
+                {"phone_number", "3453453454"}
+            };
+
+            var createdUser = AuthRequests.SendRequestClientSignUpPost(user);
+
+            var newEmail = $"new.mabel{DateTime.Now:ddyymmHHssmm}@gmail.com";
+            var wrongPassword = "randomPass";
+
+            var responseModel =
+                ClientRequests.SendRequestChangeClientEmailPost(wrongPassword, newEmail, createdUser.TokenData.Token);
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreNotEqual(newEmail, responseModel.Model.Email);
+                Assert.AreNotEqual(HttpStatusCode.OK, responseModel.Response.StatusCode);
+            });
+        }
+
+        [Test]
+        public void TryToChangePasswordWithWrongCurrentPassword()
+        {var user = new Dictionary<string, string>
+            {
+                {"email", $"mabel{DateTime.Now:ddyymmHHssmmffff}@gmail.com"},
+                {"first_name", "MaBelle"},
+                {"last_name", "Parker"},
+                {"password", "Mabel123!"},
+                {"phone_number", "3453453454"}
+            };
+
+            var createdUser = AuthRequests.SendRequestClientSignUpPost(user);
+
+            var newPhone = "1453453454";
+            var wrongPassword = "randomPass";
+
+            var changedPhone = ClientRequests.SendRequestChangeClientPhonePost(wrongPassword, newPhone, createdUser.TokenData.Token);
+
+            Assert.AreNotEqual(newPhone, changedPhone);
+        }
+        
+        [Test]
+        public void Upload()
+        {
+            var client = new RestClient("https://api.newbookmodels.com/api/images/upload/%22");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Disposition", "form-data; name='file'; filename='67913270_2607448572640247_7383304177759289344_o.jpeg'");
+            request.AddHeader("content-type", "image/jpeg");
+            request.AddHeader("authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjE1MzI0NzgsInVzZXJfaWQiOiIxMzhiODIwNy01YWM4LTQ5ZjAtYTcyNi0xMzllMDQ2ZWFlNjUiLCJleHAiOjE2MjQxMjQ0Nzh9.3OkE4lM-0MozMZQ39GtQlV422PUiby1feIzAJrQabY0");
+            request.AddParameter("image/jpeg", "/Users/MaBelle/Downloads/67913270_2607448572640247_7383304177759289344_o.jpeg", ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            
+            var client1 = new RestClient("https://api.newbookmodels.com/api/v1/client/self/%22");
+            client1.Timeout = -1;
+            var request1 = new RestRequest(Method.POST);
+            request1.AddHeader("authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjE1MzI0NzgsInVzZXJfaWQiOiIxMzhiODIwNy01YWM4LTQ5ZjAtYTcyNi0xMzllMDQ2ZWFlNjUiLCJleHAiOjE2MjQxMjQ0Nzh9.3OkE4lM-0MozMZQ39GtQlV422PUiby1feIzAJrQabY0");
+            request1.AlwaysMultipartFormData = true;
+            request1.AddParameter("avatar_id", "334b960e-4d92-4bc5-a059-4540ca2fa8af");
+            IRestResponse response1 = client.Execute(request1);
+            
+            Assert.Multiple(() =>
+            {
+                Assert.AreNotEqual(HttpStatusCode.OK, response.StatusCode);
+                Assert.AreNotEqual(HttpStatusCode.OK, response.StatusCode);
             });
         }
     }
